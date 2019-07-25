@@ -38,7 +38,7 @@ fetch('http://jsonplaceholder.typicode.com/posts')
       response.json().then(function(data) {
 		  for(var i = 0; i < data.length; i++){
 			  var art = document.createElement('article');
-			  art.innerHTML = "ID: " + data[i].id + "\nTITLE: " + data[i].title + "\nBODY: " + data[i].body;
+			  art.innerHTML = "<br>ID: " + data[i].id + "<br>TITLE: " + data[i].title + "<br>BODY: " + data[i].body;
 			  document.body.appendChild(art);
 		  	console.log(data[i]);
 		  }       
