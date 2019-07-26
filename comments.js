@@ -36,9 +36,9 @@ fetch('http://jsonplaceholder.typicode.com/posts')
 
       // Examine the text in the response
       response.json().then(function(data) {
-		  for(var i = 3; i < data.length; i++){
+		  for(var i = 2; i < data.length; i++){
 			  var art = document.createElement('article');
-			  art.innerHTML = '<article><h2 data-posts="title">'+ data[i].title +'</h2><p data-posts="body">'+data[i].body+'</p><button data-posts="id" value="'+i+'" type="button" onclick="aFunction(value)">Show comments</button><section class="comments" id="comments-'+i+'" hidden><h3>Comments</h3></section></article>';
+			  art.innerHTML = '<article><h2 data-posts="title">'+ data[i].title +'</h2><p data-posts="body">'+data[i].body+'</p><button data-posts="id" value="'+i+1+'" type="button" onclick="aFunction(value)">Show comments</button><section class="comments" id="comments-'+i+1+'" hidden><h3>Comments</h3></section></article>';
 			  document.body.appendChild(art);
 		  	console.log(data[i]);
 		  }  
