@@ -43,7 +43,7 @@ fetch('http://jsonplaceholder.typicode.com/posts')
 		  	console.log(data[i]);
 		  }  
 		  var script = document.createElement('script');
-		  script.innerHTML = 'src="comments.js"';
+		  script.innerHTML = 'type="text/javascript" src="comments.js"';
 		  document.body.appendChild(script);
       });
     }
@@ -70,7 +70,7 @@ fetch('http://jsonplaceholder.typicode.com/comments?postId=' + n)
 			  document.getElementById('comments-' + n).appendChild(paragraph);
 			  
 			  var address = document.createElement('address');
-			  address.innerHTML = '<address data-comments="' + data[i].name+ '"><a data-comments="' + data[i].email + '" href="mailto:' + data[i].email + '">id labore ex et quam laborum</a></address>';
+			  address.innerHTML = '<address data-comments="' + data[i].name+ '"><a data-comments="' + data[i].email + '" href="mailto:' + data[i].email + '">'+data[i].name+'</a></address>';
 			  document.getElementById('comments-' + n).appendChild(address);
 		  	console.log(data[i]);
 		  }       
