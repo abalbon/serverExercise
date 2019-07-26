@@ -80,4 +80,32 @@ fetch('http://jsonplaceholder.typicode.com/comments?postId=' + n)
   .catch(function(err) {
     console.log('Fetch Error :-S', err);
   });
+
+(function (window) {
+  'use strict';
+
+  const BUTTON_SELECTOR = '[data-posts="id"]';
+
+  let buttons = document.querySelectorAll(BUTTON_SELECTOR);
+
+  buttons.forEach(function (button) {
+    'use strict';
+
+    let sectionSelector = `#comments-${button.value}`;
+    let commentSection = document.querySelector(sectionSelector);
+
+    button.addEventListener('click', function (event) {
+      if (commentSection.hidden) {
+        commentSection.hidden = false;
+        button.textContent = 'Hide comments';
+      } else {
+        commentSection.hidden = true;
+        button.textContent = 'Show comments';
+      }
+
+      event.preventDefault();
+    });
+  });
+})(window);	
+	
 }
